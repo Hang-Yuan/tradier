@@ -1,1 +1,43 @@
-record some usage
+record usage for twheels.py
+
+get_quote:
+    return current price of a ticker
+  
+    input:
+    ticker,token = token, api_url = api_url
+  
+    ouput
+    a dataframe has ['last'] , ['bid'] , ['ask']
+
+candles:
+    return candles
+  
+    input:
+    ticker,
+    interval='5min',
+    start = datetime.combine(datetime.now().date(), time(9, 30)).strftime('%Y-%m-%d %H:%M'),
+    end = datetime.now().strftime('%Y-%m-%d %H:%M'),
+    token = 'FWo3SsrVulvgZAAgk0R3UKu8L6BG'
+  
+    ouput
+    a df has
+    df['time']
+    df['timestamp']
+    df['open']
+    df['high']
+    df['low']
+    df['close']
+    df['volume']
+
+
+equity_order:
+    place a buy or sell order
+
+    input:
+    ticker,side = 'buy',quantity = 1,trade_type = 'market',price = 1,stop = 1,token = token, api_url = api_url,account_id=account_id
+        price: Limit price. Required only for limit and stop_limit orders.
+        stop: Stop price. Required only for stop and stop_limit orders.
+
+    ouput:
+    df['status']
+
